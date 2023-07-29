@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Foreign Currency Api</title>
+</head>
+<body>
+    <nav class="navbar-dark bg-primary">
+        <div class="container justify-content-center">
+            <a href="" class="navbar-brand">Currency Conversion</a>
+
+        </div>
+    </nav>
+
+    <div class="container  my-5">
+        <div class="col-md-8">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="currency_one" list="list_one" placeholder="Exchange rate">
+                <datalist id="list_one"></datalist>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="currency_two" list="list_two" placeholder="Exchange rate">
+                <datalist id="list_two"></datalist>
+            </div>
+            <div class="mb-3">
+                <input type="number" id="amount" class="form-control" placeholder="Amount">
+            </div>
+            <button class="btn-outline-primary w-100 mb-3" id="calculate">Calculate</button>
+            <div id="result">
+                <div class="card border-primary">
+                    <div class="card-body text-center" style="font-size: 30px;">
+                    100 $ = 2690 ₺
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
