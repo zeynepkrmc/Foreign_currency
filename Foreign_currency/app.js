@@ -36,7 +36,14 @@ fetch(url + "/codes") //fetch returns promise
         fetch(url +"/latest/" + curr1)
         .then(res => res.json())
         .then(data => {
-            console.log(data.conversion_rates[curr2]);
+            const res = (data.conversion_rates[curr2] * amount2).toFixed(3);
+            result.innerHTML =`
+            <div class="card border-primary">
+            <div class="card-body text-center" style="font-size: 30px;">
+            ${amount2} ${curr1} = ${res} ${curr2}
+            </div>
+        </div>`;
+            //console.log(data.conversion_rates[curr2] * amount2);
         })
     });
     
