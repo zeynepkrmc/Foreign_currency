@@ -16,14 +16,27 @@ fetch(url + "/codes") //fetch returns promise
     .then(data => {//get them as string
         const items = data.supported_codes;
         
+        //for loop -> option list
         let options;
         for(let item of items) {
-            //console.log(item);
+            //item 0 and item 1
             options += `<option value=${item[0]}>${item[1]}</option>`;
         }
         list_one.innerHTML = options;
         list_two.innerHTML = options;
         
-    }) 
-    
+    });
+
+    calculate.addEventListener("click", function(){
+        const curr1 = currency_one.value;
+        const curr2 = currency_two.value;
+        const amount2 = amount.value;
+        //console.log(curr1, curr2, amount2);
+
+        fetch(url +"/latest/" + curr1)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.conversion_rates[curr2]);
+        })
+    });
     
