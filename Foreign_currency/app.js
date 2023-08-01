@@ -32,7 +32,17 @@ fetch(url + "/codes") //fetch returns promise
         const curr2 = currency_two.value;
         const amount2 = amount.value;
         //console.log(curr1, curr2, amount2);
-
+        //if amount < 0
+        if (amount2 < 0) {
+            // Display an error message for negative amount
+            result.innerHTML = `
+                <div class="card border-danger">
+                    <div class="card-body text-center" style="font-size: 30px;">
+                        Amount must be a positive value.
+                    </div>
+                </div>`;
+            return; // Stop further execution
+        } 
         fetch(url +"/latest/" + curr1)
         .then(res => res.json())
         .then(data => {
